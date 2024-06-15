@@ -1,9 +1,33 @@
 ---
+
 import Layout from '../layouts/Layout.astro';
+import PlayListItemCard from '@/components/PlayListItemCard.astro';
+import {playlists} from '@/lib/data';
 ---
 
 <Layout title="Spotify">
 
-	
+	<div
+    id="playlist-container"
+    class="relative transition-all duration-1000 bg-green-600">
+
+    <!-- Page Header -->
+
+    <div class="relative z-10 px-6">
+        <!--Greetings -->
+        <h1 class="text-4xl"> Buenos días</h1>
+
+        {
+            playlists.map((playlist ) => <PlayListItemCard playlist={playlist} />)
+        }
+
+    </div>
+    <div class="absolute inset-0 bg-gradient-to-t from-zinc-900 via-zinc-900/80" />
+
+    
+    
+
+    </div>
+    
 </Layout>
 
